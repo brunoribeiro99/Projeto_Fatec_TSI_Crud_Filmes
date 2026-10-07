@@ -1,1 +1,3 @@
 /target/
+# Oberon (out-of-context telemetry, postmortems, raw blobs)
+.oberon/
