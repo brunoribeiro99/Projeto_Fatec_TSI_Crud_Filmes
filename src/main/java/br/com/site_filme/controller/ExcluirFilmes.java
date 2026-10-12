@@ -1,15 +1,15 @@
 package br.com.site_filme.controller;
 
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import br.com.site_filme.DAO.FilmeDAOImpl;
 import br.com.site_filme.DAO.GenericDAO;
 
-@javax.servlet.annotation.WebServlet("/ExcluirFilmes")
+@jakarta.servlet.annotation.WebServlet("/ExcluirFilmes")
 
 public class ExcluirFilmes extends HttpServlet {
 

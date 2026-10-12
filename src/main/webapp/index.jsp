@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <a href="cadastrarfilme.jsp">Cadastrar Filme</a><br />
-        <a href="ListarFilmes">Listar Filmes</a>
+        <a href="./view/cadastrarfilme.jsp">Cadastrar Filme</a><br />
+        <a href="./view/listarfilmes.jsp">Listar Filmes</a>
     </body>
 </html>
