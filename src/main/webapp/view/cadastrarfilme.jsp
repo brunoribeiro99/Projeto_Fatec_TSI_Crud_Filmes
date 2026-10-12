@@ -1,5 +1,5 @@
 <%-- 
-    Document   : cadastrardepartamento.jsp
+    Document   : cadastrarfilme.jsp
     Created on : 07/10/2026 14:58
     Author     : Bruno Ribeiro
 --%>
@@ -13,10 +13,14 @@
     </head>
     <body>
         <h1>Cadastro de Filme!</h1>
-        <form name="cadastrarfilme" action="CadastrarFilme">
+        <form name="cadastrarfilme" action="${pageContext.request.contextPath}/CadastrarFilme">
             Nome:<input type="text" name="nomeFilme" value="" size="15" />
             <br>
+            Ano de Lançamento:<input type="number" name="anoLancamento" value="" min="1888" max="2100" />
+            <br>
             Descrição:<input type="text" name="descricaoFilme" value="" size="30" />
+            <br>
+            Gênero:<input type="text" name="genero" value="" size="15" />
             <br>
             <input type="submit" value="Cadastrar" name="cadastrar" />
             <input type="reset" value="Limpar" name="limpar" />

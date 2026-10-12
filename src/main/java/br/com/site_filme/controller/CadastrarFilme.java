@@ -11,29 +11,30 @@ import br.com.site_filme.DAO.FilmeDAOImpl;
 import br.com.site_filme.DAO.GenericDAO;
 import br.com.site_filme.model.Filme;
 
+@jakarta.servlet.annotation.WebServlet("/CadastrarFilme")
 public class CadastrarFilme extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        request.setCharacterEncoding("UTF-8");
+
         String nomeFilme = request.getParameter("nomeFilme");
+        String anoLancamento = request.getParameter("anoLancamento");
         String descricaoFilme = request.getParameter("descricaoFilme");
+        String genero = request.getParameter("genero");
         String mensagem = null;
 
         Filme filme = new Filme();
         filme.setNome(nomeFilme);
         filme.setDescricao(descricaoFilme);
+        filme.setGenero(genero);
 
         try {
+            if (anoLancamento != null && !anoLancamento.isBlank()) {
+                filme.setAnoLancamento(Integer.parseInt(anoLancamento.trim()));
+            }
+
             GenericDAO dao = new FilmeDAOImpl();
 
             if (dao.cadastrar(filme)) {
@@ -43,11 +44,23 @@ public class CadastrarFilme extends HttpServlet {
             }
 
             request.setAttribute("sucesso", mensagem);
-            request.getRequestDispatcher("view/cadastro.jsp").forward(request, response);
+            request.getRequestDispatcher("/view/cadastrarfilme.jsp").forward(request, response);
 
         } catch (Exception ex) {
             System.out.println("Problemas ao cadastrar Filme Erro:" + ex.getMessage());
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }
