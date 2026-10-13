@@ -7,6 +7,15 @@ public class Filme {
     private int anoLancamento;
     private String descricao;
     private String genero;
+    private String imagem;
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
 
     public Filme() {
         

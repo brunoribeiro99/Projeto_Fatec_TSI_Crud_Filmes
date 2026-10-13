@@ -10,8 +10,9 @@ import java.util.List;
 import br.com.site_filme.model.Filme;
 import br.com.site_filme.util.ConnectionFactory;
 
-public class FilmeDAOImpl implements GenericDAO{
-private Connection conn;
+public class FilmeDAOImpl implements GenericDAO {
+
+    private Connection conn;
 
     public FilmeDAOImpl() throws Exception {
         try {
@@ -26,13 +27,14 @@ private Connection conn;
     public Boolean cadastrar(Object object) {
         Filme filme = (Filme) object;
         PreparedStatement stmt = null;
-        String sql = "INSERT INTO filme(nome, ano_lancamento, descricao, genero) VALUES (?, ?, ?, ?);";
+        String sql = "INSERT INTO filme(nome, ano_lancamento, descricao, genero, imagem) VALUES (?, ?, ?, ?, ?);";
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, filme.getNome());
             stmt.setInt(2, filme.getAnoLancamento());
             stmt.setString(3, filme.getDescricao());
             stmt.setString(4, filme.getGenero());
+            stmt.setString(5, filme.getImagem());
             stmt.execute();
             return true;
         } catch (SQLException ex) {
@@ -49,7 +51,7 @@ private Connection conn;
         }
     }
 
- @Override
+    @Override
     public void excluir(int idObject) {
         PreparedStatement stmt = null;
         String sql = "delete from filme where id = ?;";
@@ -70,7 +72,7 @@ private Connection conn;
         }
     }
 
-   @Override
+    @Override
     public List<Object> listar() {
         List<Object> resultado = new ArrayList<Object>();
         PreparedStatement stmt = null;
@@ -86,6 +88,7 @@ private Connection conn;
                 filme.setAnoLancamento(rs.getInt("ano_lancamento"));
                 filme.setDescricao(rs.getString("descricao"));
                 filme.setGenero(rs.getString("genero"));
+                filme.setImagem(rs.getString("imagem"));
                 resultado.add(filme);
             }
         } catch (SQLException ex) {

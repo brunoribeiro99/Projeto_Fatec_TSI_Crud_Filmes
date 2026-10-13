@@ -6,3 +6,5 @@ CREATE TABLE filme (
     genero VARCHAR(100)
 );
 select * from filme;
+
+ALTER TABLE filme ADD COLUMN imagem text;

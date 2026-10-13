@@ -24,11 +24,13 @@ public class CadastrarFilme extends HttpServlet {
         String descricaoFilme = request.getParameter("descricaoFilme");
         String genero = request.getParameter("genero");
         String mensagem = null;
+        String imagem = request.getParameter("imagem");
 
         Filme filme = new Filme();
         filme.setNome(nomeFilme);
         filme.setDescricao(descricaoFilme);
         filme.setGenero(genero);
+        filme.setImagem(imagem);
 
         try {
             if (anoLancamento != null && !anoLancamento.isBlank()) {

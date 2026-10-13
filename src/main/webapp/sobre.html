@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/sobre.css">
+</head>
+
+<body>
+
+   <div class="intro">
+
+    <svg class="logo-m" viewBox="0 0 200 250">
+
+        <path
+    class="m-traco"
+    d="M 30 220 L 30 30 L 100 150 L 170 30 L 170 220"
+/>
+<audio id="somIntro" src="./audio/tum.mp3" preload="auto"></audio>
+    </svg>
+
+</div>
+    <header class="metflix-navbar">
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container-fluid">
+
+                <a class="nome" href="index.html">METFLIX</a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                Início
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Filmes
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+
+                                Outros
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item" href="sobre.html">
+                                        Sobre
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="contato.html">
+                                        Contato
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main class="sobre">
+        <h1>Sobre o Projeto de Filmes</h1>
+
+        <p>
+            Este projeto tem como finalidade apresentar um catálogo de filmes,
+            exibindo informações como título, gênero e uma breve descrição de cada obra.
+        </p>
+
+        <p>
+            A ideia surgiu a partir do meu interesse por filmes, principalmente pelo
+            gênero de comédia. Por isso, o catálogo possui alguns filmes desse gênero,
+            como <strong>Se Beber, Não Case!</strong>,
+            <strong>American Pie: Beta House</strong> e
+            <strong>Mac & Devin no Colegial</strong>.
+        </p>
+
+        <p>
+            Além das comédias, também foram adicionados filmes de outros gêneros,
+            como ação e ficção científica, representados por títulos como
+            <strong>John Wick 4: Baba Yaga</strong> e
+            <strong>Matrix Resurrections</strong>.
+        </p>
+
+        <p>
+            O projeto foi desenvolvido utilizando <strong>HTML e CSS</strong>,
+            com o objetivo de praticar a criação de páginas web, organização de
+            conteúdo, estruturação de elementos e estilização de uma interface
+            inspirada em plataformas de streaming.
+        </p>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+<script>
+    const som = document.getElementById("somIntro");
+
+    setTimeout(function () {
+        som.play().catch(function () {
+            console.log("O navegador bloqueou o áudio automático.");
+        });
+    }, 2000);
+
+    setTimeout(function () {
+        document.querySelector(".intro").classList.add("sair");
+    }, 2800);
+</script>
+</body>
+
+</html>
