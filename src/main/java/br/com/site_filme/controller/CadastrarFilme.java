@@ -2,14 +2,13 @@ package br.com.site_filme.controller;
 
 import java.io.IOException;
 
+import br.com.site_filme.DAO.FilmeDAOImpl;
+import br.com.site_filme.DAO.GenericDAO;
+import br.com.site_filme.model.Filme;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import br.com.site_filme.DAO.FilmeDAOImpl;
-import br.com.site_filme.DAO.GenericDAO;
-import br.com.site_filme.model.Filme;
 
 @jakarta.servlet.annotation.WebServlet("/CadastrarFilme")
 public class CadastrarFilme extends HttpServlet {
